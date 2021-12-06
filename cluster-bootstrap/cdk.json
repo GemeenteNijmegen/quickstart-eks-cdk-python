@@ -3,8 +3,8 @@
     "context": {
       "account": "",
       "region": "",
-      "create_new_cluster_admin_role": "True",
-      "existing_admin_role_arn": "arn:aws:iam::123456789123:role/RoleName",
+      "create_new_cluster_admin_role": "False",
+      "existing_admin_role_arn": "arn:aws:iam::122467643252:role/Developers",
       "create_new_vpc": "True",
       "vpc_cidr": "10.0.0.0/22",
       "vpc_cidr_mask_public": 26,
