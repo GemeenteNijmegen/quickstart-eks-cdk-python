@@ -1111,6 +1111,7 @@ class EKSClusterStack(core.Stack):
                 machine_image=amzn_linux,
                 role=cluster_admin_role,
                 vpc=eks_vpc,
+                keyName="ec2-bram-haven",
                 vpc_subnets=ec2.SubnetSelection(
                     subnet_type=ec2.SubnetType.PUBLIC),
                 security_group=bastion_security_group,
@@ -1626,7 +1627,7 @@ class EKSClusterStack(core.Stack):
                 namespace="kube-system",
                 values={
                     "global": {
-                        "rbac":{
+                        "rbac": {
                             "pspEnabled": False
                         }
                     },
@@ -1640,9 +1641,9 @@ class EKSClusterStack(core.Stack):
                         },
                         "prometheusSpec": {
                             "storageSpec": {
-                                    "emptyDir": {
-                                        "medium": "Memory"
-                                    }
+                                "emptyDir": {
+                                    "medium": "Memory"
+                                }
                             },
                             "remoteWrite": [{
                                 "queueConfig": {
@@ -1681,8 +1682,8 @@ class EKSClusterStack(core.Stack):
                             "requests": {
                                 "cpu": "0.25",
                                 "memory": "0.5Gi"
+                            }
                         }
-                    }
                     },
                     "kubeControllerManager": {
                         "enabled": False
