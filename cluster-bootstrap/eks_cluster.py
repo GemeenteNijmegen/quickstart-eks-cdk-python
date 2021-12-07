@@ -1111,7 +1111,7 @@ class EKSClusterStack(core.Stack):
                 machine_image=amzn_linux,
                 role=cluster_admin_role,
                 vpc=eks_vpc,
-                keyName="ec2-bram-haven",
+                key_name="ec2-bram-haven",
                 vpc_subnets=ec2.SubnetSelection(
                     subnet_type=ec2.SubnetType.PUBLIC),
                 security_group=bastion_security_group,
